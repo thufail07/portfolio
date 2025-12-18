@@ -1,16 +1,22 @@
-import { useEffect } from 'react'
-import Layout from './components/layout/layout.jsx'
-import Hero from './features/hero/hero.jsx'
-import About from './features/about/about.jsx'
-import Education from './features/education/education.jsx'
-import Linkedin from './features/linkedin/linkedin.jsx'
-import Experience from './features/experience/experience.jsx'
-import Projects from './features/project/project.jsx'
-import Certification from './features/certification/certification.jsx'
-import Contact from './features/contact/contact.jsx'
+import { useState, useEffect } from 'react';
+import { Routes, Route } from 'react-router-dom';
 
+import Loader from './components/common/loader.jsx';
+import BackToTop from './components/common/backtotop.jsx';
+import Layout from './components/layout/layout.jsx';
+
+import routes from './route/index.jsx';
 
 function App() {
+  const [loading, setLoading] = useState(true);
+
+  // Loader
+  useEffect(() => {
+    const timer = setTimeout(() => setLoading(false), 1500);
+    return () => clearTimeout(timer);
+  }, []);
+
+  // Scroll progress
   useEffect(() => {
     const handleScroll = () => {
       const scrollTop = window.scrollY;
@@ -23,19 +29,28 @@ function App() {
     window.addEventListener('scroll', handleScroll);
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
+
+  if (loading) return <Loader />;
+
   return (
-    <Layout>
-      <Hero />
-      <About />
-      <Education />
-      <Linkedin />
-      <Experience />
-      <Projects />
-      <Certification />
-      <Contact />
-    </Layout>
-  )
+    <>
+      <Layout>
+        <div id="scroll-progress"></div>
+
+        <Routes>
+          {routes.map((route, index) => (
+            <Route
+              key={index}
+              path={route.path}
+              element={route.view}
+            />
+          ))}
+        </Routes>
+      </Layout>
+
+      <BackToTop />
+    </>
+  );
 }
 
-export default App
-
+export default App;

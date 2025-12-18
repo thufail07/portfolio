@@ -71,6 +71,10 @@ body {
     .animate-pulse-slow {
         animation: pulse 3s cubic-bezier(0.4, 0, 0.6, 1) infinite;
     }
+
+    .animate-spin-slow {
+        animation: spin 3s linear infinite;
+    }
 }
 
 /* Keyframes */
@@ -105,5 +109,15 @@ body {
 
     50% {
         opacity: 0.6;
+    }
+}
+
+@keyframes spin {
+    from {
+        transform: rotate(0deg);
+    }
+
+    to {
+        transform: rotate(360deg);
     }
 }

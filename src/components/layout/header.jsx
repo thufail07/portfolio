@@ -110,7 +110,7 @@ function Header() {
                                 ))}
                                 <button className="mt-3 w-full py-3 bg-emerald-500 text-white font-semibold rounded-xl 
                   hover:bg-emerald-400 transition-colors shadow-md">
-                                    Get Started
+                                    Get Connect
                                 </button>
                             </nav>
                         </div>
