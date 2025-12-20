@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react';
-import { Routes, Route } from 'react-router-dom';
+import { Routes, Route, Navigate } from 'react-router-dom';
 
 import Loader from './components/common/loader.jsx';
 import BackToTop from './components/common/backtotop.jsx';
@@ -45,6 +45,9 @@ function App() {
               element={route.view}
             />
           ))}
+
+          {/* Redirect unknown routes to home */}
+          <Route path="*" element={<Navigate to="/" replace />} />
         </Routes>
       </Layout>
 

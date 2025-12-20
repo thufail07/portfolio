@@ -1,4 +1,3 @@
-// Footer.jsx
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { FiGithub, FiTwitter, FiLinkedin, FiInstagram } from 'react-icons/fi';
@@ -8,7 +7,7 @@ function Footer() {
         { name: 'Home', path: '/' },
         { name: 'About', path: '/about' },
         { name: 'Projects', path: '/projects' },
-        { name: 'Blog', path: '#' }, // Keep as # if no blog page
+        { name: 'Blog', path: '/blog' },
         { name: 'Contact', path: '/contact' },
     ];
 
@@ -36,7 +35,7 @@ function Footer() {
     ];
 
     return (
-        <footer className="relative w-full bg-black py-12 px-4 mt-24">
+        <footer className="relative w-full bg-black py-12 px-4">
             <div className="max-w-7xl mx-auto">
                 {/* Glass Footer Panel */}
                 <div className="backdrop-blur-xl bg-black/20 border border-white/10 rounded-2xl p-8 shadow-2xl">

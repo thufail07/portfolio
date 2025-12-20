@@ -3,6 +3,9 @@ import AboutPage from '../pages/aboutPage';
 import ProjectPage from '../pages/projectPage';
 import ContactPage from '../pages/contactPage';
 import LinkedinPage from '../pages/linkedinPage';
+import BlogCardPage from '../pages/blogCardPage';
+import BlogDetailsPage from '../pages/blogDetailsPage';
+
 
 const routes = [
     {
@@ -24,6 +27,14 @@ const routes = [
     {
         path: '/connect',
         view: <LinkedinPage />,
+    },
+    {
+        path: '/blog',
+        view: <BlogCardPage />,
+    },
+    {
+        path: '/blog/:slug',
+        view: <BlogDetailsPage />,
     },
 ];
 

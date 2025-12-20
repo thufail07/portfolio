@@ -21,7 +21,7 @@ function Header() {
         { name: 'Home', path: '/' },
         { name: 'About', path: '/about' },
         { name: 'Projects', path: '/projects' },
-        { name: 'Blog', path: '#' }, // No page yet – keep as # or remove
+        { name: 'Blog', path: '/blog' },
         { name: 'Contact', path: '/contact' },
     ];
 
@@ -61,8 +61,8 @@ function Header() {
                             key={item.path}
                             to={item.path}
                             className={`relative px-4 py-2 font-medium transition-all duration-300 ${isActive(item.path)
-                                    ? 'text-emerald-300'
-                                    : 'text-white/90 hover:text-white'
+                                ? 'text-emerald-300'
+                                : 'text-white/90 hover:text-white'
                                 }`}
                         >
                             {item.name}
@@ -118,8 +118,8 @@ function Header() {
                                         key={item.path}
                                         to={item.path}
                                         className={`text-lg font-medium py-2.5 px-2 rounded-lg transition-colors relative ${isActive(item.path)
-                                                ? 'text-emerald-300 bg-emerald-500/10'
-                                                : 'text-white hover:bg-white/10'
+                                            ? 'text-emerald-300 bg-emerald-500/10'
+                                            : 'text-white hover:bg-white/10'
                                             }`}
                                         onClick={() => setIsMenuOpen(false)}
                                     >
